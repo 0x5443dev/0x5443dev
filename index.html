@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0x5443</title>
+<meta name="description" content="0x5443">
+<meta property="og:title" content="0x5443">
+<meta property="og:description" content="0x5443">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%23000'/%3E%3Ctext%20x='32'%20y='42'%20font-family='monospace'%20font-size='28'%20fill='%2300ff41'%20text-anchor='middle'%3E0x%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --green:#00ff41;
+  --dim:#0d8a3a;
+  --bright:#eafff0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{color-scheme:dark}
+html,body{height:100%}
+body{
+  background:#000;
+  color:var(--green);
+  font-family:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+#rain{position:fixed;inset:0;z-index:0;width:100%;height:100%;display:block}
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.6) 100%);
+}
+main{position:relative;z-index:2;text-align:center;padding:1.5rem}
+h1{
+  position:relative;
+  font-size:clamp(2.6rem,10vw,6rem);
+  font-weight:600;
+  letter-spacing:.14em;
+  padding-left:.14em;
+  color:var(--bright);
+  text-shadow:0 0 6px rgba(0,255,65,.55),0 0 26px rgba(0,255,65,.22);
+}
+.glitch::before,.glitch::after{
+  content:attr(data-text) / "";
+  position:absolute;inset:0;
+  padding-left:.14em;
+  opacity:0;
+  pointer-events:none;
+  text-shadow:none;
+}
+.glitch::before{color:#8dffb0;animation:gA 6.5s steps(1) infinite}
+.glitch::after{color:#00b85a;animation:gB 6.5s steps(1) infinite .09s}
+@keyframes gA{
+  0%,83%{opacity:0;clip-path:inset(0 0 100% 0);transform:none}
+  84%{opacity:.9;clip-path:inset(15% 0 55% 0);transform:translate(-7px,-1px)}
+  87%{opacity:.9;clip-path:inset(62% 0 8% 0);transform:translate(6px,1px)}
+  90%{opacity:.9;clip-path:inset(30% 0 42% 0);transform:translate(-4px,0)}
+  93%,100%{opacity:0;clip-path:inset(0 0 100% 0);transform:none}
+}
+@keyframes gB{
+  0%,55%{opacity:0;clip-path:inset(0 0 100% 0);transform:none}
+  56%{opacity:.75;clip-path:inset(48% 0 30% 0);transform:translate(5px,1px)}
+  59%{opacity:.75;clip-path:inset(10% 0 74% 0);transform:translate(-6px,0)}
+  62%,81%{opacity:0;clip-path:inset(0 0 100% 0);transform:none}
+  84%{opacity:.75;clip-path:inset(70% 0 12% 0);transform:translate(4px,-1px)}
+  87%,100%{opacity:0;clip-path:inset(0 0 100% 0);transform:none}
+}
+.contact{
+  margin-top:1.6rem;
+  font-size:clamp(1rem,2.6vw,1.3rem);
+  letter-spacing:.08em;
+  color:var(--dim);
+}
+.contact a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dotted rgba(0,255,65,.4);
+  padding-bottom:2px;
+  transition:color .18s,border-color .18s,text-shadow .18s;
+}
+.contact a:hover,.contact a:focus-visible{
+  color:var(--green);
+  border-color:var(--green);
+  text-shadow:0 0 10px rgba(0,255,65,.55);
+}
+.contact a:focus-visible{outline:1px dashed rgba(0,255,65,.7);outline-offset:5px}
+::selection{background:rgba(0,255,65,.25);color:#f2fff6}
+@media (prefers-reduced-motion:reduce){
+  .glitch::before,.glitch::after{animation:none}
+  .contact a{transition:none}
+}
+</style>
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<main>
+  <h1 class="glitch" data-text="0x5443">0x5443</h1>
+  <p class="contact"><span id="email"></span><noscript><a href="mailto:0x5443@proton.me">0x5443@proton.me</a></noscript></p>
+</main>
+<script>
+(() => {
+  "use strict";
+  const c = document.getElementById("rain");
+  const ctx = c.getContext("2d");
+  const MONO = 'ui-monospace,"SF Mono",Menlo,Consolas,monospace';
+  const CHARS = "\u30A1\u30A3\u30A5\u30A7\u30A9\u30AB\u30AD\u30AF\u30B1\u30B3\u30B5\u30B7\u30B9\u30BB\u30BD\u30BF\u30C1\u30C3\u30C6\u30C8\u30CA\u30CB\u30CC\u30CD\u30CE\u30CF\u30D2\u30D5\u30D8\u30DB\u30DE\u30DF\u30E0\u30E1\u30E2\u30E4\u30E6\u30E8\u30E9\u30EA\u30EB\u30EC\u30ED\u30EF\u30F30123456789ABCDEF\x3C\x3E/\\|+-=";
+  const FS = 16;
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w, h, cols, drops, speeds;
+
+  const rc = () => CHARS[(Math.random() * CHARS.length) | 0];
+
+  const resize = () => {
+    w = innerWidth;
+    h = innerHeight;
+    c.width = Math.floor(w * DPR);
+    c.height = Math.floor(h * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    cols = Math.ceil(w / FS);
+    drops = Array.from({ length: cols }, () => Math.random() * (h / FS));
+    speeds = Array.from({ length: cols }, () => 0.4 + Math.random() * 0.8);
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, w, h);
+  };
+  resize();
+  addEventListener("resize", resize);
+
+  const frame = () => {
+    ctx.fillStyle = "rgba(0,0,0,.08)";
+    ctx.fillRect(0, 0, w, h);
+    ctx.font = FS + "px " + MONO;
+    for (let i = 0; i < cols; i++) {
+      const x = i * FS;
+      const y = drops[i] * FS;
+      ctx.fillStyle = "rgba(216,255,227,.9)";
+      ctx.fillText(rc(), x, y);
+      ctx.fillStyle = "rgba(0,255,65,.5)";
+      ctx.fillText(rc(), x, y - FS);
+      drops[i] += speeds[i];
+      if (drops[i] * FS > h && Math.random() < 0.05) drops[i] = 0;
+    }
+  };
+
+  const still = () => {
+    ctx.font = FS + "px " + MONO;
+    const n = (((cols * h) / FS / FS) * 0.07) | 0;
+    for (let k = 0; k < n; k++) {
+      ctx.fillStyle = "rgba(0,255,65," + (0.05 + Math.random() * 0.2).toFixed(3) + ")";
+      ctx.fillText(rc(), ((Math.random() * cols) | 0) * FS, ((Math.random() * (h / FS)) | 0) * FS);
+    }
+  };
+
+  if (reduce) {
+    still();
+  } else {
+    let raf = 0;
+    let last = 0;
+    const tick = (t) => {
+      if (t - last >= 33) {
+        last = t;
+        frame();
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+      } else {
+        last = 0;
+        raf = requestAnimationFrame(tick);
+      }
+    });
+  }
+
+  const addr = "em.notorp@3445x0".split("").reverse().join("");
+  const a = document.createElement("a");
+  a.href = "mailto:" + addr;
+  a.textContent = addr;
+  document.getElementById("email").replaceWith(a);
+})();
+</script>
+</body>
+</html>
